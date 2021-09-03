@@ -1,27 +1,9 @@
-const ewelink = require('ewelink-api')
-require('dotenv').config();
+const app = require('./app')
+const http = require('http')
 
-(async () => {
+const server = http.createServer(app)
 
-    console.log(process.env.EWEEMAIL)
-    console.log(process.env.EWEPWD)
-
-  const connection = new ewelink({
-    email: process.env.EWEEMAIL,
-    password: process.env.EWEPWD,
-    region: 'eu'
-  });
-  const region = connection.getRegion()
-  console.log(region)
-  /* get all devices */
-  const devices = await connection.getDevices()
-  console.log(devices)
-
-  /* get specific devide info */
- // const device = await connection.getDevice('<your device id>');
- // console.log(device);
-
-  /* toggle device */
-  await connection.toggleDevice('100033c82c')
-
-})();
+const PORT = process.env.PORT || 3001
+server.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`)
+})
