@@ -19,9 +19,25 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTop
   })
 
 app.use(cors())
-app.use(express.json())
+app.use(express.json());
 
-app.use('/api/data', temperatureRouter)
+(async () => {
+
+const connection = new ewelink({
+  email: process.env.EWEEMAIL,
+  password: process.env.EWEPWD,
+  region: 'eu'
+})
+
+await connection.getCredentials();
+
+const socket = await connection.openWebSocket(async data => {
+  console.log(data)
+});
+
+})();
+
+app.use('/api/temperatures', temperatureRouter)
 app.use('/api/light', lightRouter)
 
 module.exports = app

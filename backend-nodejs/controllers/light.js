@@ -1,7 +1,23 @@
 const ewelink = require('ewelink-api')
-
 const lightRouter = require('express').Router()
 require('dotenv').config()
+
+lightRouter.get('/', async (request, response) => {
+  (async () => {
+  
+  const connection = new ewelink({
+    email: process.env.EWEEMAIL,
+    password: process.env.EWEPWD,
+    region: 'eu'
+  })
+
+  const devices = await connection.getDevices()
+  console.log(devices)
+  
+  return response.json(devices)
+  
+  })();
+})
 
 lightRouter.post('/', async (request, response) => {
   const body = request.body

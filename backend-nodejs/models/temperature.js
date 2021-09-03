@@ -9,15 +9,6 @@ const temperatureSchema = new mongoose.Schema({
     },
     humidity: {
       type: Number
-    },
-    lightness: {
-      type: Number
-    },
-    pollution: {
-      type: Number
-    },
-    distance: {
-      type: Number
     }
   })
   
