@@ -26,9 +26,18 @@ p {
 }
 
 .container-fluid {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 20px;
   text-align: center;
+}
+
+.lights {
+  padding-bottom: 20px;
+}
+
+.box {
+  border: lightskyblue 1px solid;
+  border-radius: 10%;
+  box-shadow: 2px 2px 2px lightskyblue;
 }
 
 h1, h2, h3 {
