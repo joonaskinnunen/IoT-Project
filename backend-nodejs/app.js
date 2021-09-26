@@ -6,6 +6,8 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 const temperatureRouter = require('./controllers/temperature')
 const lightRouter = require('./controllers/light')
+const usersRouter = require('./controllers/users')
+const loginRouter = require('./controllers/login')
 require('dotenv').config()
 
 console.log('connecting to', process.env.MONGODB_URI)
@@ -23,5 +25,7 @@ app.use(express.json());
 
 app.use('/api/temperatures', temperatureRouter)
 app.use('/api/lights', lightRouter)
+app.use('/api/users', usersRouter)
+app.use('/api/login', loginRouter)
 
 module.exports = app

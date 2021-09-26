@@ -1,9 +1,8 @@
-/* eslint-disable react/prop-types */
 import React from "react"
 import { Navbar, Nav } from "react-bootstrap"
 import Logo from "../logo.png"
 
-const Header = () => {
+const Header = ({ user, logout }) => {
   return (
     <div className="header">
       <Navbar bg="dark" variant="dark" expand="lg">
@@ -17,7 +16,7 @@ const Header = () => {
             />
           </Navbar.Brand>
           <Nav>
-            <Nav.Link href="#link">Kirjaudu ulos</Nav.Link>
+          {user !== null && <Nav.Link onClick={ logout } href="/logout">Kirjaudu ulos</Nav.Link>}
           </Nav>
         </Navbar>
     </div>
