@@ -26,10 +26,6 @@ lightRouter.post('/', async (request, response) => {
   }
 
   (async () => {
-
-    console.log(process.env.EWEEMAIL)
-    console.log(process.env.EWEPWD)
-  
   const connection = new ewelink({
     email: process.env.EWEEMAIL,
     password: process.env.EWEPWD,

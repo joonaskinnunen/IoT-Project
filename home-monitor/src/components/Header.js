@@ -7,7 +7,6 @@ const Header = () => {
   return (
     <div className="header">
       <Navbar bg="dark" variant="dark" expand="lg">
-        <Navbar.Collapse id="basic-navbar-nav">
           <Navbar.Brand href="/">
             <img
               src={Logo}
@@ -17,11 +16,10 @@ const Header = () => {
               alt="Home Monitor"
             />
           </Navbar.Brand>
-          <Nav className="mr-auto">
+          <Nav>
             <Nav.Link href="#link">Kirjaudu ulos</Nav.Link>
           </Nav>
-        </Navbar.Collapse>
-      </Navbar>
+        </Navbar>
     </div>
   )
 }

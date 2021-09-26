@@ -12,7 +12,7 @@ p {
   margin-top: revert !important;
 }
 
-.header {
+ .header {
   margin-bottom: 40px;
 }
 
@@ -35,9 +35,10 @@ p {
 }
 
 .box {
-  border: lightskyblue 1px solid;
+  border: lightskyblue 0px solid;
   border-radius: 10%;
-  box-shadow: 2px 2px 2px lightskyblue;
+  box-shadow: 1px 2px 1px 1px lightskyblue;
+  padding-bottom: 10px;
 }
 
 h1, h2, h3 {

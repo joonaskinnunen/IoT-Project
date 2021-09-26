@@ -8,16 +8,16 @@ const Temperatures = ({ temperatures }) => {
 
     return (
             <Row>
-                <h2>Lämpötila ja kosteus</h2>
+                <h2 style={{marginBottom: '20px'}}>Lämpötila ja kosteus</h2>
                 <Col></Col>
                 <Col>
-                    <div class="box">
-                    <p>Lämpötila</p><ThermometerOutline color={'#29aae1'} height="120px" width="120px" /><p style={{ fontSize: (35), fontWeight: 'bold' }}>{temperatures.length > 0 ? temperatures[temperatures.length - 1].temperature > 0 ? '+' + parseFloat(temperatures[temperatures.length - 1].temperature).toFixed(1).toString() + " °C" : '-' + parseFloat(temperatures[temperatures.length - 1].temperature).toFixed(1).toString() + " °C" : <Spinner animation="border" variant="info" />}</p>
+                    <div className="box">
+                    <p>Lämpötila</p><ThermometerOutline color={'#29aae1'} height="100px" width="100px" /><p style={{ fontSize: '2em', fontWeight: 'bold' }}>{temperatures.length > 0 ? temperatures[temperatures.length - 1].temperature > 0 ? '+' + parseFloat(temperatures[temperatures.length - 1].temperature).toFixed(1).toString() + " °C" : '-' + parseFloat(temperatures[temperatures.length - 1].temperature).toFixed(1).toString() + " °C" : <Spinner animation="border" variant="info" />}</p>
                     </div>
                 </Col>
                 <Col>
-                <div class="box">
-                    <p>Ilmankosteus</p><Water color={'#29aae1'} height="120px" width="120px" /><p style={{ fontSize: (35), fontWeight: 'bold' }}>{temperatures.length > 0 ? temperatures[temperatures.length - 1].humidity > 0 ? parseFloat(temperatures[temperatures.length - 1].humidity).toFixed(1).toString() + " %" : '-' + parseFloat(temperatures[temperatures.length - 1].humidity).toFixed(1).toString() + " %" : <Spinner animation="border" variant="info" />}</p>
+                <div className="box">
+                    <p>Ilmankosteus</p><Water color={'#29aae1'} height="100px" width="100px" /><p style={{ fontSize: '2em', fontWeight: 'bold' }}>{temperatures.length > 0 ? temperatures[temperatures.length - 1].humidity > 0 ? parseFloat(temperatures[temperatures.length - 1].humidity).toFixed(1).toString() + " %" : '-' + parseFloat(temperatures[temperatures.length - 1].humidity).toFixed(1).toString() + " %" : <Spinner animation="border" variant="info" />}</p>
                     </div>
                 </Col>
                 <Col></Col>
