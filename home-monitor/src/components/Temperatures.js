@@ -4,8 +4,6 @@ import { Row, Col, Spinner } from "react-bootstrap"
 import { Water, ThermometerOutline } from 'react-ionicons'
 
 const Temperatures = ({ temperatures }) => {
-    console.log(temperatures)
-
     return (
             <Row>
                 <h2 style={{marginBottom: '20px'}}>Lämpötila ja kosteus</h2>

@@ -6,11 +6,9 @@ import { withStyles } from '@material-ui/core/styles'
 import lightService from '../services/lights'
 
 const Lights = ({ lights, lightStates, setLightStates }) => {
-    console.log(lights)
 
     const toggleLight = (event) => {
         lightService.toggleLight(lights[event.target.name].deviceid)
-        console.log(lights[event.target.name].deviceid)
         setLightStates({ ...lightStates, [event.target.name]: event.target.checked })
     }
 

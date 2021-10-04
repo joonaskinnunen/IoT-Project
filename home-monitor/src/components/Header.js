@@ -16,7 +16,7 @@ const Header = ({ user, logout }) => {
             />
           </Navbar.Brand>
           <Nav>
-          {user !== null && <Nav.Link onClick={ logout } href="/logout">Kirjaudu ulos</Nav.Link>}
+          {user !== null && <Nav.Link onClick={ logout } href="https://kotona.herokuapp.com/">Kirjaudu ulos</Nav.Link>}
           </Nav>
         </Navbar>
     </div>
