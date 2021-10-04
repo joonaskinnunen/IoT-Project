@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+<img width="600" alt="IoT" src="https://user-images.githubusercontent.com/13503539/135908415-66835c59-b35f-40cb-8d97-21950ed5ca05.png">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
+The objective of this project were to make a IoT system that measures indoor temperature and humidity and controls home lighting.
+Current temperature and humidity is displayed in the web application. The lights can also be turned on or off using the app.
 
-## Available Scripts
+## Objectives
+The idea for the project was based on the consideration of is it possible to make a web app with which you can control Sonoff LED bulbs connected to wifi. The same app should also show the home temperature and humidity so that you get a good picture of the situation at the home from the one application.
+One object was also to learn how to transfer information between different hardware and software so that the end result is software in which the information obtained from the IoT devices is presented as user-friendly a manner as possible. 
 
-In the project directory, you can run:
+## Methods
+Temperature and humidity measuring is technically implemented with an Arduino microcontroller and connected DHT11 sensor. The Arduino is connected to a Raspberry Pi, which sends the data collected from the sensors to the MongoDB cloud database.
+Self-developed Node.js Express backend were created and the backend has API from which the application can retrieve information from the database. The backend also has an API for controlling lights.
+Web app were created with React to view information. The app is hosted in the Heroku and can be accessed with any modern web browser. 
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Results
+The system worked as planned.
+The app displays temperature and humidity information virtually real time. The lights can be turned on and off successfully from the app.
+Since the application is accessible from the public internet (https://kotona.herokuapp.com), security had to be taken into account when making the application. You must log in to the application with a username and password before any data is displayed.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Conclusions
+Several different techniques were used in the system and the project was great learning experience.
+No major problems of any kind occurred during the project.
+The application can be easily expanded in the future for example adding wifi connected power switches and other IoT devices to the app. More sensors could also be added.
+There are plenty of similar commercial products available like this system, but I think it is cheaper to build your own system and you can make the system just right for you.
 
-### `npm test`
+## References
+Project code repository
+Github: https://github.com/joonaskinnunen/IoT-Project
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+eWeLink API for controlling lights
+Github: https://github.com/skydiver/ewelink-api
 
-### `npm run build`
+DHT11 temperature-humidity sensor datasheet: https://www.mouser.com/datasheet/2/758/DHT11-Technical-Data-Sheet-Translated-Version-1143054.pdf 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ReactJS documentation: https://reactjs.org/docs/getting-started.html
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+MongoDB documentation:
+https://docs.mongodb.com/
